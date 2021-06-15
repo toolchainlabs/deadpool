@@ -25,6 +25,7 @@ serde = { version = "1.0", features = ["derive"], optional = true }
 # unless the `rt_tokio_1` feature is enabled.
 tokio = { version = "1", features = ["sync"] }
 async-std = { version = "1", optional = true }
+redis = { version = "0.20.1", optional = true }
 
 [dev-dependencies]
 criterion = "0.3"
@@ -49,6 +50,7 @@ managed = ["async-trait"]
 unmanaged = []
 rt_tokio_1 = ["tokio/time"]
 rt_async-std_1 = ["async-std"]
+tc-redis-traits = ["redis", "redis/aio", "redis/tokio-comp"]
 
 [[bench]]
 name = "unmanaged"
